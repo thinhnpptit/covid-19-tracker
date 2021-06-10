@@ -1,10 +1,9 @@
-import { Grid } from '@material-ui/core'
-import React from 'react'
+import { Grid } from '@material-ui/core';
+import React from 'react';
 import HighlightCard from './HighlightCard';
 
 export default function Hightlight({ report }) {
-
-  const data = report && report.length ? report[report.length-1] : [];
+  const data = report && report.length ? report[report.length - 1] : [];
   const summary = [
     {
       title: 'Số ca nhiễm',
@@ -21,17 +20,19 @@ export default function Hightlight({ report }) {
       count: data.Deaths,
       type: 'deaths'
     }
-  ]
+  ];
 
   return (
     <Grid container spacing={3}>
-      {
-        summary.map(item => (
-          <Grid item sm={4} xs={12} >
-            <HighlightCard title={item.title} count={item.count} type={item.type} />
-          </Grid>
-        ))
-      }
+      {summary.map((item) => (
+        <Grid item sm={4} xs={12} key={item.type}>
+          <HighlightCard
+            title={item.title}
+            count={item.count}
+            type={item.type}
+          />
+        </Grid>
+      ))}
     </Grid>
-  )
+  );
 }
