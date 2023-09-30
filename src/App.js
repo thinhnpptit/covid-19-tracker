@@ -7,7 +7,7 @@ import Hightlight from './components/Highlight';
 import Summary from './components/Summary';
 import 'moment/locale/vi';
 import '@fontsource/roboto';
-import sortBy from 'lodash.sortby';
+import sortBy from 'lodash/sortBy';
 
 moment.locale('vi');
 
